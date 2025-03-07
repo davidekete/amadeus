@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 
+///GET Request structs
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FlightResponse {
     pub data: Vec<FlightDestination>,
@@ -21,4 +22,15 @@ pub struct FlightDestination {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FlightPrice {
     pub total: String,
+}
+
+/// POST request structs
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CancellationResponse {
+    pub data: CancellationData,
+}
+#[derive(Debug, Serialize, Deserialize)]
+pub struct CancellationData {
+    pub confirmNbr: String,
+    pub reservationStatus: String,
 }
